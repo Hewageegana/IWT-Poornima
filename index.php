@@ -13,16 +13,45 @@
 <body>
     <center>
         <div class="header">
-            <img src='./images/R.jpg' alt="logo Image" class="logo">
+            <img src='./images/logo.png' alt="logo Image" class="logo">
             <div class="headertext">
-                <h1>Cool Rental</h1>
-                <h3 id="header">Online Vaccination Portal</h3>
-                <h4 id="sup">For supporting gmail us: carcoolrental@gmail.com </h4>
-                <h4 id="sup">Service helping call us: +94782548125</h4>
+                <h2>Online Vaccination Portal</h2>
+                <div class="small-heading"><h5 id="header">Stay safe. Get vaccined</h5></div> 
             </div>
         </div>
-    </center>
-    <h1>Home</h1>
+    </center><br><br>
+    <header class="header1">
+    
+	<i class="fa fa-bars menu-toggle"></i>
+
+	<ul class="nav">
+		
+		<li class="linein"><a href="homepage.html">Home</a></li>
+		<li class="linein"><a href="#">View Inventory</a></li>
+		<li class="linein"><a href="#">About Us</a></li>
+		<li class="linein"><a href="#">Help</a></li>
+        <li class="linein"><a href="#">Contact Us</a></li>
+		<li class="linein"><a href="./php/login.php">Login/Register</a></li>
+
+		
+
+		<!-- <li class="linein">
+			<a href="#">
+				<i class="fa fa-user"></i>
+			
+			<i class="fa fa-chevron-down"style="font-size: .8em;"></i>
+		</a>
+			<ul>
+				<li class="linein"><a href="loginform.html">Dashboard</a></li>
+				<li class="linein"><a href="#" class="">Preferences</a></li>
+				<li class="linein"><a href="#" class="">Settings</a></li>
+				<li class="linein"><a href="#" class="logout">Signout</a></li>
+			</ul>
+		</li> -->
+	
+
+	</ul>
+</header>
 </body>
 
 </html>
