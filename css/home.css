@@ -1,0 +1,41 @@
+.card-container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    margin-left: 3%;
+    
+}
+
+.card{
+    display: block;
+}
+
+.col-1{
+    display: flex;
+}
+
+.card-logo{
+    width: 30%;
+    height: 40%;
+}
+
+.card-body{
+    max-width: 90%;
+    font-size: large;
+    font-family: sans-serif;
+    padding-left: 5%;
+}
+
+.card-header h3{
+    padding-left: 5%;
+    font-size: 30px;
+    font-weight: 600;
+    font-family: sans-serif;
+    
+
+}
+
+.vaccine-header h1{
+
+    padding-left: 3%;
+}
