@@ -16,16 +16,18 @@
 <body onload="checkAccess()">
 
     <div class="header">
-        <div>
-            <img src='./images/logo.png' alt="logo Image" class="logo">
+        <div class="upper-header">
+            <div>
+                <img src='./images/logo.png' alt="logo Image" class="logo">
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search"/>
+            </div>
+            <div class="avatar">
+            <img src='./images/av.png' alt="logo Image">
+            </div>
         </div>
 
-        <!-- <div class="headertext">
-            <h2>Online Vaccination Portal</h2>
-            <div class="small-heading">
-                <h5 id="header">Stay safe. Get vaccined</h5>
-            </div>
-        </div> -->
     </div>
 
     <header class="header1">
@@ -40,7 +42,7 @@
             <li class="linein"><a href="#">Help</a></li>
             <li class="linein"><a href="#">Contact Us</a></li>
             <li class="linein noAccess" id="noAccess"><a href="./php/login.php">Login/Register</a></li>
-            <li class="linein login" id="login"><a>Logout</a></li>
+            <li class="linein login" id="login"><a>Profile</a></li>
 
 
 
