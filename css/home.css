@@ -72,35 +72,3 @@
   width: 60%;
   height: 100%;
 }
-
-.upper-header {
-  display: flex;
-}
-
-.search-bar {
-  margin-top: 3%;
-  margin-left: 35%;
-  width: 200px;
-  height: 45px;
-}
-
-.search-bar input {
-  width: 300px;
-  height: 35px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  size: 25px;
-  border-radius: 8px;
-  border-color: solid black;
-  border-width: 2px;
-  
-}
-
-.avatar img {
-  width: 100px;
-  height: 100px;
-}
-
-.avatar {
-  margin-left: 17%;
-  margin-top: 1%;
-}

@@ -50,8 +50,10 @@
         if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
             $cookie_name = "user";
+
+            $domain = ($_SERVER['HTTP_HOST'] != 'localhost') ? $_SERVER['HTTP_HOST'] : false;
             $cookie_value = json_encode($row);
-            setcookie($cookie_name, $cookie_value, time() + (86400), "localhost");
+            setcookie($cookie_name, $cookie_value, time() + (86400), '/', $domain, false);
             header('location:../index.php');
         } else {
             echo '<script language ="javascript">';
