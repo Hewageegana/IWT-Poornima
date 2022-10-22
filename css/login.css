@@ -1,0 +1,74 @@
+.login{  
+        width: 382px;  
+        overflow: hidden;  
+        margin: auto;  
+        margin: 20 0 0 450px;  
+        padding: 80px;  
+        background-image: url("../Photos/regiBackground.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size:1500px;
+         
+          
+} 
+a#forg:hover {
+	background-color: white;
+    color:black; ;
+} 
+  
+label{  
+    color: Black;  
+    font-size: 17px;  
+}  
+#Uname{  
+    width: 300px;  
+    height: 30px;  
+    border: groove;  
+    border-radius: 5px;  
+    padding-left: 8px;  
+}
+  
+#Pass1{  
+    width: 300px;  
+    height: 30px;  
+    border: groove;  
+    border-radius: 3px;  
+    padding-left: 8px;  
+      
+}  
+#log{  
+    width: 300px;  
+    height: 30px;  
+    border: groove;  
+    border-radius: 17px;  
+    padding-left: 7px;  
+    color:green;  
+  
+  
+}  
+span{  
+    color: red;  
+    font-size: 17px;  
+}  
+.button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-color: #4CAF50;
+}
+
+h6{
+	font-weight: bold;	
+	font-size: 15px;
+	color:black;
+}
+a#regi:hover {
+    color:black;    
+    background-color:#4CAF50;
+}

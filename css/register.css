@@ -1,0 +1,154 @@
+.regis{
+	background-image: url("../Photos/regiBackground.jpg");
+  padding: 20px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size:1500px;
+}
+
+b{
+	color:black;
+	font-size:22px;
+	font-family:Californian FB;
+	
+}
+
+h6{
+		
+	font-size: 30px;
+	color:black;
+
+}
+
+* {box-sizing: border-box}
+
+#address{
+	padding: 15px;
+	margin: 5px 0 22px 0;
+	display: inline-block;
+	border: none;
+	background: #f1f1f1;
+}
+
+.sdob{
+
+	margin: 5px 0 22px 0;
+	display: inline-block;
+	border: none;
+	background: #f1f1f1;
+}
+
+input[type=password], input[type=tel] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+ input[type=password]:focus, input[type=tel]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+#fname{
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+#fname:focus{
+  background-color: #ddd;
+  outline: none;
+}
+.gen {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 15px;
+  user-select: none;
+}
+
+
+.gen input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+
+.gen:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+
+.gen input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+
+.gen input:checked ~ .checkmark:after {
+  display: block;
+}
+
+
+.gen .checkmark:after {
+ 	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+}
+
+.registerbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+  
+}
+
+
+
+.resetbtn{
+  background-color:	#FF0000;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 20%;
+}
+
+p#reg{
+	font-size: 15px;
+	color:black;
+}
+
