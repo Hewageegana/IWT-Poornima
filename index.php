@@ -106,9 +106,9 @@
                     <h3>Which vaccines are approved for kids</h3>
                 </div>
                 <div class="des">
-                    <p>Kids ages 6 month and older can now recieve the pediatric Pfizer-BioNTech or
+                    <!-- <p>Kids ages 6 month and older can now recieve the pediatric Pfizer-BioNTech or
                         Moderna COVID - 19 vaccine, which has been proven safe and effective in protecting
-                        them from infection and illness from the virus</p>
+                        them from infection and illness from the virus</p> -->
                     <button class="btn-lower">Read more</button>
                 </div>
 
@@ -122,9 +122,9 @@
                     <h3>Connecticut COVID-19 Vaccination Date Tracker</h3>
                 </div>
                 <div class="des">
-                    <p>Kids ages 6 month and older can now recieve the pediatric Pfizer-BioNTech or
+                    <!-- <p>Kids ages 6 month and older can now recieve the pediatric Pfizer-BioNTech or
                         Moderna COVID - 19 vaccine, which has been proven safe and effective in protecting
-                        them from infection and illness from the virus</p>
+                        them from infection and illness from the virus</p> -->
                     <button class="btn-lower">Read more</button>
                 </div>
 
@@ -139,9 +139,9 @@
                     <h3>Mask - Wearing Rules by vaccination status</h3>
                 </div>
                 <div class="des">
-                    <p>Kids ages 6 month and older can now recieve the pediatric Pfizer-BioNTech or
+                    <!-- <p>Kids ages 6 month and older can now recieve the pediatric Pfizer-BioNTech or
                         Moderna COVID - 19 vaccine, which has been proven safe and effective in protecting
-                        them from infection and illness from the virus</p>
+                        them from infection and illness from the virus</p> -->
                     <button class="btn-lower">Read more</button>
                 </div>
 
