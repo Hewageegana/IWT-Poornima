@@ -9,10 +9,11 @@
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/home.css">
     <link rel="stylesheet" href="./css/card.css">
+    <script type="text/javascript" src="./js//home.js"></script>
 
 </head>
 
-<body>
+<body onload="checkAccess()">
 
     <div class="header">
         <div>
@@ -38,7 +39,8 @@
             <li class="linein"><a href="#">About Us</a></li>
             <li class="linein"><a href="#">Help</a></li>
             <li class="linein"><a href="#">Contact Us</a></li>
-            <li class="linein"><a href="./php/login.php">Login/Register</a></li>
+            <li class="linein noAccess" id="noAccess"><a href="./php/login.php">Login/Register</a></li>
+            <li class="linein login" id="login"><a>Logout</a></li>
 
 
 
@@ -51,10 +53,10 @@
         <div class="card-container">
             <div class="card">
                 <div class="col-1">
-                    <img src='./images/children.jpg' alt="logo Image" class="card-logo">
-
-
-                    <div>
+                    <div class="logo-cover">
+                        <img src='./images/children.jpg' alt="logo Image" class="card-logo">
+                    </div>
+                    <div class="body-cover">
                         <div class="card-header">
                             <h3>Vaccine for Children</h3>
                         </div>
@@ -69,12 +71,13 @@
 
             </div>
 
-            <div class="card">
+            <div class="card2">
                 <div class="col-1">
-                    <img src='./images/old.jpg' alt="logo Image" class="card-logo">
+                    <div class="logo-cover">
+                        <img src='./images/old.jpg' alt="logo Image" class="card-logo">
 
-
-                    <div>
+                    </div>
+                    <div class="body-cover">
                         <div class="card-header">
                             <h3>Booster Shots</h3>
                         </div>

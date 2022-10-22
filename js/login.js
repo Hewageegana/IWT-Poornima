@@ -16,6 +16,3 @@ function psFunction() {
   }
 }
 
-function userDetails(results) {
-    console.log(results)
-}
