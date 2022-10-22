@@ -1,8 +1,10 @@
 .cards{
-    width: 33%;
+    width: 25%;
     border-radius: 5px;
+    margin: 40px;
     box-shadow: 2px 2px 10px black;
     display: inline-block;
+    align-self: center;
 }
 
 
@@ -41,14 +43,14 @@
 }
 
 .block-2-cards{
-    width: 100%;
+   padding-left: 5%;
+   width: 100%;
+   align-items: center;
+   justify-content: space-evenly;
+   justify-items: center;
 }
 
 .block2-heading h1{
     padding-left: 3%;
     padding-top: 10%;
-}
-
-.block-2{
-    width: 100%;
 }
