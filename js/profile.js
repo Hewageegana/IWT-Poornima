@@ -10,3 +10,9 @@ function logOut() {
   function delete_cookie(name) {
     document.cookie = name +'=; Path=/;';
   }
+
+  function onDeleteSuccess(){
+     alert("Deleted Success")
+     delete_cookie('user')
+     window.location.reload()
+  }

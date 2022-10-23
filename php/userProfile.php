@@ -42,7 +42,6 @@
             <li class="linein"><a href="../php/aboutUs.php">About Us</a></li>
             <li class="linein"><a href="#">Help</a></li>
             <li class="linein"><a href="#">Contact Us</a></li>
-            <li class="linein noAccess" id="noAccess"><a href="../php/login.php">Login/Register</a></li>
             <li class="linein login" id="login"><a>Profile</a></li>
 
 
@@ -102,13 +101,32 @@
                     <button type="button" class="resetbtn" style="background-color: #2962FF">My Vaccination</button>
                     <a href="../php/updateUserprofile.php"><button type="button" class="resetbtn" style="background-color: #2962FF">Update Profile</button></a>
                     <button type="button" class="resetbtn" style="background-color: #2962FF">Change Password</button>
+                    <form method="POST" action="userProfile.php">
+                        <button type="submit" id="deleteBtn" name="deleteBtn" class="resetbtn" style="background-color: #D50000" value="10">Delete Account</button>
+                    </form>
                     <button type="button" class="resetbtn" style="background-color: #D50000" onclick="logOut()">Log out</button>
+                    <?php
+                    require 'DbConfig.php';
+                    if (isset($_POST['deleteBtn'])) {
+                        $sql = "DELETE FROM users WHERE user_Id= '$userID'";
 
+                        if ($conn->query($sql) === TRUE) {
+                            echo '<script language = "javascript">';
+                            echo 'onDeleteSuccess()';
+                            echo '</script>';
+                        } else {
+                            echo '<script language = "javascript">';
+                            echo 'alert("Unsuccessfull :( ")';
+                            echo '</script>';
+                        }
+                        $conn->close();
+                    }
+                    ?>
                 </div>
             </div>
         </div>
     </div>
- <hr>
+    <hr>
     <table style="width:100%" class="tbl">
         <tr>
             <th></th>
@@ -130,6 +148,8 @@
 
     </table>
     <hr>
+
+
 </body>
 
 </html>

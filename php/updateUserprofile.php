@@ -9,7 +9,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/register.css">
     <link rel="stylesheet" href="../css/header.css">
-    <script type="text/javascript" src="../js/register.js"></script>
+    <!-- <script type="text/javascript" src="../js/register.js"></script> -->
+    <script type="text/javascript" src="../js/checkAccess.js"></script>
+    <script type="text/javascript" src="../js/profileUpdate.js"></script>
 </head>
 
 <body onload="checkAccess()">
@@ -38,11 +40,10 @@
 
             <li class="linein"><a href="../index.php">Home</a></li>
             <li class="linein"><a href="#">View Inventory</a></li>
-            <li class="linein"><a href="../php/aboutUs.php">About Us</a></li>
+            <li class="linein"><a href="./aboutUs.php">About Us</a></li>
             <li class="linein"><a href="#">Help</a></li>
             <li class="linein"><a href="#">Contact Us</a></li>
-            <li class="linein noAccess" id="noAccess"><a href="../php/login.php">Login/Register</a></li>
-            <li class="linein login" id="login"><a>Profile</a></li>
+            <li class="linein login" id="login"><a href="./updateUserprofile.php">Profile</a></li>
 
 
 
@@ -53,22 +54,38 @@
 
 
     <div>
-        <h5>Welcome to the Public health vaccines</h5>
 
-        <form method="POST" action="register.php" onsubmit="return cheakpassword()">
-            <center><h6>Update User Details</h6></center>
+        <form method="POST" action="updateUserprofile.php">
+            <center>
+                <h6>Update User Details</h6>
+            </center>
 
             <hr>
             <div class="regis">
 
+                <?php
+                require 'DbConfig.php';
+                if (isset($_COOKIE['user'])) {
 
-                <label for="fname"><b>First Name:</b></label><br>
-                <input type="text" id="fname" name="fname" style="width:1000px" placeholder="First Name" required><br />
+                    $userID = json_decode($_COOKIE['user'])->user_Id;
 
-                <label for="fname"><b>Last Name:</b></label><br>
-                <input type="text" id="fname" name="lname" style="width:1000px" placeholder="Last Name" required><br />
 
-                <label for="gender"><b>Gender:</b></label><br><br>
+                    $sql = "SELECT * FROM users WHERE user_Id= '" . $userID . "'";
+                    $result = $conn->query($sql);
+                    // echo $conn->query($sql);
+                    // $data = json_encode($result->user);
+                    if ($result) {
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                ?>
+
+                                <label for="fname"><b>First Name:</b></label><br>
+                                <input type="text" id="fname" name="firstName" style="width:1000px" placeholder="First Name" value="<?php echo $row['first_name']; ?>" required><br />
+
+                                <label for="fname"><b>Last Name:</b></label><br>
+                                <input type="text" id="fname" name="lname" style="width:1000px" placeholder="Last Name" value="<?php echo $row['last_name']; ?>" required><br />
+
+                                <!-- <label for="gender"><b>Gender:</b></label><br><br>
                 <label class="gen">Male
                     <input type="radio" value="Male" checked="checked" name="radio">
                     <span class="checkmark"></span>
@@ -76,61 +93,60 @@
                 <label class="gen">Female
                     <input type="radio" value="Female" name="radio">
                     <span class="checkmark"></span>
-                </label><br>
+                </label><br> -->
 
-                <!--<label for = gender><b>Gender</b></label><br>
+                                <!--<label for = gender><b>Gender</b></label><br>
                     <select name ="radio" id="radio">
                         <option selected hidden value ="">Choose gender</option>
                         <option value="MALE">MALE</option>
                         <option value="FEMALE">FEMALE</option>
                     </select><br><br>-->
 
-                <label for="phone"><b>Phone number :</b></label><br>
-                <input type="tel" id="fname" name="phone" pattern="[0-9]{10}" style="width:1000px" placeholder="Phone number" required><br>
+                                <label for="phone"><b>Phone number :</b></label><br>
+                                <input type="tel" id="fname" name="phone" pattern="[0-9]{10}" style="width:1000px" placeholder="Phone number" value="0<?php echo $row['phone_number']; ?>" required><br>
 
-                <label for="address"><b>Address :</b></label><br>
-                <textarea id="fname" name="address" rows="10" cols="50" style="width:500px" placeholder="Address" ;required></textarea><br>
+                                <label for="address"><b>Address :</b></label><br>
+                                <textarea id="fname" name="address" rows="10" cols="50" style="width:500px" placeholder="Address" ;required><?php echo $row['address']; ?></textarea><br>
 
-                <!--<label for="dob"><b>Choose your DOB:</b></label><br>
+                                <!--<label for="dob"><b>Choose your DOB:</b></label><br>
                         <input type="date" name="day" id="fname" style="width:300px" required><br><br>-->
 
-                <label for="email"><b>Email</b></label><br>
-                <input type="text" placeholder="Enter Email" name="email" id="fname" style="width:1000px" required><br>
+                                <!-- <label for="email"><b>Email</b></label><br>
+                <input type="text" placeholder="Enter Email" name="email" id="fname" style="width:1000px" required><br> -->
+                <?php
+                            }
+                        }
+                    } else {
+                        echo "Error in " . $sql . "
+                    " . $conn->error;
+                    }
+                }
+                ?>
 
-    
 
-                <button type="submit" id="registerbtn" name="registerbtn" value="registerbtn" class="registerbtn" disabled>Update</button>
+                <button type="submit" id="updateBtn" name="updateBtn" value="updateBtn" class="registerbtn">Update</button>
                 <button type="reset" class="resetbtn">Reset</button>
             </div>
             <?php
-            require './DbConfig.php';
-            if (isset($_POST['registerbtn'])) {
+            if (isset($_POST['updateBtn'])) {
 
-                $first = $_POST["fname"];
+                $first = $_POST["firstName"];
                 $last = $_POST["lname"];
-                $Gender = $_POST["radio"];
                 $tel = $_POST["phone"];
                 $address = $_POST["address"];
-                $email = $_POST["email"];
-                $psw = $_POST["Pass"];
-                $isActive = true;
-                $userType = 1;
-                $createdDate = date('Y-m-d H:i:s');
 
 
 
-                $sql = "INSERT INTO users (user_Id, first_name, last_name, gender, phone_number, address, email, password, isActive,  user_type, created_date)
-	            VALUES (0,'$first','$last','$Gender',$tel,'$address','$email','$psw','$isActive', '$userType', '$createdDate' )";
-
-
+                $sql = "UPDATE users SET first_name='$first', last_name='$last', phone_number='$tel', address ='$address' 
+                WHERE user_Id= '$userID'";
 
                 if ($conn->query($sql) === TRUE) {
                     echo '<script language = "javascript">';
-                    echo 'success()';
+                    echo 'onUpdateSuccess()';
                     echo '</script>';
                 } else {
                     echo '<script language = "javascript">';
-                    echo 'alert("Unsuccessfully :( ")';
+                    echo 'alert("Unsuccessfull :( ")';
                     echo '</script>';
                 }
                 $conn->close();
