@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/home.css">
     <link rel="stylesheet" href="./css/card.css">
-    <script type="text/javascript" src="./js//home.js"></script>
+    <script type="text/javascript" src="./js/home.js"></script>
 
 </head>
 
@@ -17,14 +17,19 @@
 
     <div class="header">
         <div class="upper-header">
-            <div>
+            <div class="log-cover">
                 <img src='./images/logo.png' alt="logo Image" class="logo">
             </div>
             <div class="search-bar">
-                <input type="text" placeholder="Search"/>
+                <div class="search-bar-wrapper">
+                    <input type="text" placeholder="Search" class="search-input" />
+                </div>
             </div>
-            <div class="avatar">
-            <img src='./images/av.png' alt="logo Image">
+            <div class="empty-div">
+
+            </div>
+            <div class="avatar-cover">
+                <img src='./images/av.png' alt="logo Image" class="avatar">
             </div>
         </div>
 
@@ -42,7 +47,7 @@
             <li class="linein"><a href="#">Help</a></li>
             <li class="linein"><a href="#">Contact Us</a></li>
             <li class="linein noAccess" id="noAccess"><a href="./php/login.php">Login/Register</a></li>
-            <li class="linein login" id="login"><a>Profile</a></li>
+            <li class="linein login" id="login"><a href="./php/userProfile.php">Profile</a></li>
 
 
 
@@ -153,6 +158,28 @@
             </div>
         </div>
     </div>
+    <hr>
+    <table style="width:100%" class="tbl">
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+        </tr>
+        <tr>
+            <td>
+                <h2 id="footer">© 2020 Copyright: Cool Rentals</h2>
+            </td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="www.facebook.com"><img src="./images/fb.jpg" class="icon"></a>&nbsp;&nbsp;<a href="www.instagram.com"><img src="./images/insta.jpg" class="icon"></a>&nbsp;&nbsp;<a href="www.web.whatsapp.com"><img src="./images/wh.png" class="icon"></a>&nbsp;&nbsp;<a href="www.twitter.com"><img src="./images/tw.png" class="icon"></a>&nbsp;&nbsp;</td>
+        </tr>
+
+    </table>
+    <hr>
 
 </body>
 
