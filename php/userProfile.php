@@ -49,6 +49,8 @@
                 else{ 
                     echo "Error in ".$sql."
                     ".$conn->error; }
+
+                    $conn->close();
             }
             ?>
             <!-- <a href="#"><i class="fa fa-dribbble"></i></a>
