@@ -60,6 +60,8 @@
             echo 'alert("Login Faild")';
             echo '</script>';
         }
+
+        $conn->close();
     }
     ?>
 </body>
