@@ -24,14 +24,25 @@ hr{
 }
 
 .map{
-   padding-left: 43%;
+   padding-left: 40%;
 }
 
 .contact-details{
-    padding-left: 5%;
+    padding-left: 10%;
     font-family: sans-serif;
 }
 
+.contact-details h1{
+    padding-bottom: 4%;
+}
+
+.contact-details about-address{
+    padding-bottom: 2%;
+}
+
+.contact-details about-phone{
+    padding-bottom: 2%;
+}
 
 .aboutus-card{
     display: block;
@@ -41,6 +52,9 @@ hr{
     width: 40%;
     height: 200px;
     overflow: hidden;
+    border-radius: 10px;
+   
+    box-shadow: 2px 2px 10px black;
     
 }
 
@@ -52,7 +66,9 @@ hr{
     width: 40%;
     height: 200px;
     overflow: hidden;
+    border-radius: 10px;
    
+    box-shadow: 2px 2px 10px black;
 }
 
 .aboutus-card-container {
@@ -61,4 +77,8 @@ hr{
     margin-left: 3%;
     margin-top: 5%;
     margin-bottom: 5%;
+  }
+
+  .about-address{
+    font-size: 16px;
   }

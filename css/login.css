@@ -1,55 +1,52 @@
-.login{  
-        width: 382px;  
-        overflow: hidden;  
-        margin: auto;  
-        margin: 20 0 0 450px;  
-        padding: 80px;  
-        background-image: url("../Photos/regiBackground.jpg");
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size:1500px;
-         
-          
-} 
-a#forg:hover {
-	background-color: white;
-    color:black; ;
-} 
-  
-label{  
-    color: Black;  
-    font-size: 17px;  
-}  
-#Uname{  
-    width: 300px;  
-    height: 30px;  
-    border: groove;  
-    border-radius: 5px;  
-    padding-left: 8px;  
+.login {
+  width: 400px;
+  overflow: hidden;
+  margin: auto;
+  margin: 20 0 0 450px;
+  padding: 80px;
+  border-style: solid black;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 1500px;
 }
-  
-#Pass1{  
-    width: 300px;  
-    height: 30px;  
-    border: groove;  
-    border-radius: 3px;  
-    padding-left: 8px;  
-      
-}  
-#log{  
-    width: 300px;  
-    height: 30px;  
-    border: groove;  
-    border-radius: 17px;  
-    padding-left: 7px;  
-    color:green;  
-  
-  
-}  
-span{  
-    color: red;  
-    font-size: 17px;  
-}  
+
+a#forg:hover {
+  background-color: white;
+  color: black;
+}
+
+label {
+  color: Black;
+  font-size: 17px;
+}
+#Uname {
+  width: 400px;
+  height: 30px;
+  border: groove;
+  border-radius: 5px;
+  padding-left: 8px;
+}
+
+#Pass1 {
+  width: 400px;
+  height: 30px;
+  border: groove;
+  border-radius: 3px;
+  padding-left: 8px;
+}
+#log {
+  width: 100px;
+  height: 30px;
+  border: groove;
+  border-radius: 17px;
+  padding-left: 7px;
+  color: green;
+
+}
+span {
+  color: red;
+  font-size: 17px;
+}
 .button {
   border: none;
   color: white;
@@ -60,15 +57,29 @@ span{
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
-  background-color: #4CAF50;
+  background-color: #4caf50;
+  border-radius: 5px;
 }
 
-h6{
-	font-weight: bold;	
-	font-size: 15px;
-	color:black;
+h6 {
+  font-weight: bold;
+  font-size: 15px;
+  color: black;
 }
 a#regi:hover {
-    color:black;    
-    background-color:#4CAF50;
+  color: black;
+  background-color: #4caf50;
+}
+
+.log-container input{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.log-container label{
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.log-container {
+    margin-top: 3%;
+    font-family: Arial, Helvetica, sans-serif;
 }

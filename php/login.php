@@ -11,29 +11,37 @@
     <script type="text/javascript" src="../js/login.js"></script>
 </head>
 
+
 <body>
     <div>
         <div class="login">
+            <div class="login-image">
+                <img src='../images/logo.png' alt="logo Image" class="login-logo" style="width: 400px;height: 250px;">
+            </div>
             <form id="login" method="post">
+                <div class="log-container">
                 <label><b>Email Address
                     </b>
                 </label> <br>
-                <input type="text" name="Uname" id="Uname" placeholder="Email Address" required>
+                <input type="text" name="Uname" id="Uname" placeholder="Email Address" required style="width: 400px;">
                 <br><br>
                 <label><b>Password </b>
                 </label> <br>
-                <input type="Password" name="Pass1" id="Pass1" placeholder="Password" required></br>
+                <input type="Password" name="Pass1" id="Pass1" placeholder="Password" required style="width: 400px;"></br>
                 <input type="checkbox" onclick="psFunction()">Show Password
                 <input type="checkbox" id="check">
                 <span>Remember me</span>
                 <br><br>
-                <button type="submit" class="button" name="login" value="login">Log In Here</button>
+                <center>
+                <button type="submit" class="button" name="login" value="login">Log In</button>
+                
                 <br><br>
-                <a href="#" id="forg">Forgot Password</a><br>
-                <h6>If you don't have an account</h6>
-
+                <a href="#" id="forg">Forgot Password ?</a><br>
+                <h6>If you don't have an account <a href="./register.php" id="regi">Register in here</a></h6>
+                </div>
+                </center>
             </form>
-            <button class="button"> <a href="./register.php" id="regi">Register In here</a></button>
+
         </div>
     </div>
 
