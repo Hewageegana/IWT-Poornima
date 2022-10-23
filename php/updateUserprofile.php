@@ -8,15 +8,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/register.css">
+    <link rel="stylesheet" href="../css/header.css">
     <script type="text/javascript" src="../js/register.js"></script>
 </head>
 
-<body>
+<body onload="checkAccess()">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <div class="header">
+        <div class="upper-header">
+            <div>
+                <img src='../images/logo.png' alt="logo Image" class="logo">
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search" />
+            </div>
+            <div class="avatar">
+                <img src='../images/av.png' alt="logo Image">
+            </div>
+        </div>
+
+    </div>
+
+    <header class="header1">
+
+        <i class="fa fa-bars menu-toggle"></i>
+
+        <ul class="nav">
+
+            <li class="linein"><a href="../index.php">Home</a></li>
+            <li class="linein"><a href="#">View Inventory</a></li>
+            <li class="linein"><a href="../php/aboutUs.php">About Us</a></li>
+            <li class="linein"><a href="#">Help</a></li>
+            <li class="linein"><a href="#">Contact Us</a></li>
+            <li class="linein noAccess" id="noAccess"><a href="../php/login.php">Login/Register</a></li>
+            <li class="linein login" id="login"><a>Profile</a></li>
+
+
+
+        </ul>
+    </header>
+
+
+
+
     <div>
         <h5>Welcome to the Public health vaccines</h5>
 
         <form method="POST" action="register.php" onsubmit="return cheakpassword()">
-            <center><h6>Registration form</h6></center>
+            <center><h6>Update User Details</h6></center>
 
             <hr>
             <div class="regis">
@@ -28,7 +68,7 @@
                 <label for="fname"><b>Last Name:</b></label><br>
                 <input type="text" id="fname" name="lname" style="width:1000px" placeholder="Last Name" required><br />
 
-                <label for="gender"><b>Gender:</b></label><br>
+                <label for="gender"><b>Gender:</b></label><br><br>
                 <label class="gen">Male
                     <input type="radio" value="Male" checked="checked" name="radio">
                     <span class="checkmark"></span>
@@ -57,18 +97,9 @@
                 <label for="email"><b>Email</b></label><br>
                 <input type="text" placeholder="Enter Email" name="email" id="fname" style="width:1000px" required><br>
 
-                <label for="psw"><b>Password</b></label><br>
-                <input type="password" placeholder="Enter Password" name="Pass" id="Pass" style="width:1000px" required><br>
-                <input type="checkbox" onclick="myFunction()">Show Password <br><br>
+    
 
-                <label for="psw-repeat"><b>Repeat Password</b></label><br>
-                <input type="password" placeholder="Repeat Password" name="rePass" id="rePass" style="width:1000px" required><br>
-                <input type="checkbox" onclick="reFunction()">Show Password <br><br>
-                <hr>
-
-                <p id="reg"><input type="checkbox" id="policy" name="policy" required onclick="enablebutton()"> I agree to <a href="#">Terms & Privacy</a>.</p>
-
-                <button type="submit" id="registerbtn" name="registerbtn" value="registerbtn" class="registerbtn" disabled>Register</button>
+                <button type="submit" id="registerbtn" name="registerbtn" value="registerbtn" class="registerbtn" disabled>Update</button>
                 <button type="reset" class="resetbtn">Reset</button>
             </div>
             <?php
@@ -108,6 +139,28 @@
             ?>
         </form>
     </div>
+    <hr>
+    <table style="width:100%" class="tbl">
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+        </tr>
+        <tr>
+            <td>
+                <h2 id="footer">&copy; Public health vaccines</h2>
+            </td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="www.facebook.com"><img src="../images/fb.jpg" class="icon"></a>&nbsp;&nbsp;<a href="www.instagram.com"><img src="../images/insta.jpg" class="icon"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="www.web.whatsapp.com"><img src="../images/wh.png" class="icon"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="www.twitter.com"><img src="../images/tw.png" class="icon"></a>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        </tr>
+
+    </table>
+    <hr>
 </body>
 
 </html>
