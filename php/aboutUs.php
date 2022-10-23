@@ -9,18 +9,14 @@
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/home.css">
     <link rel="stylesheet" href="../css/card.css">
+    <link rel="stylesheet" href="../css/aboutus.css">
+
     <script type="text/javascript" src="../js//home.js"></script>
-
-    <!-- Font awsome icon links -->
-    <!-- >Font awesome site link to get some social media logoes<-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity=crossorigin="anonymous">
-
-    <!-- >google fonts<-->
-    <link href="https://fonts.googleapis.com/css2?family=Candal&family=Lora:ital@0;1&display=swap" rel="stylesheet">
 
 </head>
 
 <body onload="checkAccess()">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <div class="header">
         <div class="upper-header">
@@ -109,13 +105,13 @@
                     <h1>Headquarters</h1>
                 </div>
                 <div class="address">
-                    <p>Colombo | Sri - Lanka <br> 117, Gall Road, <br> Colombo</p>
+                <i class="fa fa-home"></i><p>Colombo | Sri - Lanka <br> 117, Gall Road, <br> Colombo</p>
                 </div>
                 <div class="about-phone">
-                    <p><i class="fas fa-phone">011 - 2 222 222</i></p>
+                <i class="fa fa-phone"><p>011 - 2 222 222</i></p>
                 </div>
                 <div class="about-gmail">
-                    <p><i class="fas fa-envelope">contact.info@gmail.com</i></p>
+                <i class="fa fa-envelope"></i> <p>contact.info@gmail.com</p>
                 </div>
             </div>
             <div class="map">
