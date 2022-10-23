@@ -16,7 +16,7 @@
     <div>
         <div class="login">
             <div class="login-image">
-                <img src='../images/logo.png' alt="logo Image" class="login-logo" style="width: 400px;height: 250px;">
+                <img src='../images/logo.png' alt="logo Image" class="login-logo" style="width: 400px;height: 200px;">
             </div>
             <form id="login" method="post">
                 <div class="log-container">
