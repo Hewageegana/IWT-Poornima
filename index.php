@@ -47,7 +47,7 @@
             <li class="linein"><a href="#">Help</a></li>
             <li class="linein"><a href="#">Contact Us</a></li>
             <li class="linein noAccess" id="noAccess"><a href="./php/login.php">Login/Register</a></li>
-            <li class="linein login" id="login"><a>Profile</a></li>
+            <li class="linein login" id="login"><a href="./php/userProfile.php">Profile</a></li>
 
 
 
