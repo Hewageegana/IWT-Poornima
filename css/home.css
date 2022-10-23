@@ -4,6 +4,14 @@
   margin-left: 3%;
 }
 
+.aboutus-card-container {
+    width: 100%;
+    display: flex;
+    margin-left: 3%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+
 .card {
   display: block;
   border-width: 1px;
@@ -23,6 +31,28 @@
   height: 300px;
   overflow: hidden;
   background-color: rgb(156, 228, 204);
+}
+
+.aboutus-card{
+    display: block;
+    border-width: 1px;
+    border-style: solid;
+    margin-left: 4%;
+    width: 40%;
+    height: 200px;
+    overflow: hidden;
+    
+}
+
+.aboutus-card2{
+    display: block;
+    border-width: 1px;
+    border-style: solid;
+    margin-left: 6%;
+    width: 40%;
+    height: 200px;
+    overflow: hidden;
+   
 }
 
 .col-1 {
@@ -103,4 +133,36 @@
 .avatar {
   margin-left: 17%;
   margin-top: 1%;
+}
+
+.reach-our-team{
+    width: 40%;
+    height: 50px;
+    background-color:rgb(156, 228, 204);
+    margin-top: 5%;
+}
+
+.reach-our-team h1{
+    padding: 10px;
+}
+
+.about-us-informations{
+    width: 100%;
+    height: auto;
+    display: flex;
+    padding-top: 1%;
+    
+}
+
+hr{
+    width: 3%px;
+}
+
+.map{
+   padding-left: 43%;
+}
+
+.contact-details{
+    padding-left: 5%;
+    font-family: sans-serif;
 }

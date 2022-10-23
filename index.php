@@ -38,7 +38,7 @@
 
             <li class="linein"><a href="homepage.html">Home</a></li>
             <li class="linein"><a href="#">View Inventory</a></li>
-            <li class="linein"><a href="#">About Us</a></li>
+            <li class="linein"><a href="./php/aboutUs.php">About Us</a></li>
             <li class="linein"><a href="#">Help</a></li>
             <li class="linein"><a href="#">Contact Us</a></li>
             <li class="linein noAccess" id="noAccess"><a href="./php/login.php">Login/Register</a></li>
