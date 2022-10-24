@@ -104,7 +104,7 @@
         <div class="about-us-informations">
             <div class="contact-details">
                 <div class="head-q">
-                    <h1>Headquarters</h1>
+                    <h1>Headquarters.</h1>
                 </div>
                 <div class="about-address">
                     <p> <i class="fa fa-home">&nbsp; &nbsp;Colombo | Sri - Lanka 117,<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;Gall Road, Colombo </i></p>
