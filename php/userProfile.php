@@ -25,7 +25,7 @@
                 <input type="text" placeholder="Search" />
             </div>
             <div class="avatar">
-                <img src='../images/av.png' alt="logo Image">
+            <img src='../images/av.png' alt="logo Image" class="avatar">
             </div>
         </div>
 
@@ -98,7 +98,7 @@
             <div class="vl"></div>
             <div class="card2">
                 <div class="button-wrpper">
-                    <button type="button" class="resetbtn" style="background-color: #2962FF">My Vaccination</button>
+                    <a href="../php/myVaccinations.php"><button type="button" class="resetbtn" style="background-color: #2962FF">My Vaccination</button></a>
                     <a href="../php/updateUserprofile.php"><button type="button" class="resetbtn" style="background-color: #2962FF">Update Profile</button></a>
                     <button type="button" class="resetbtn" style="background-color: #2962FF">Change Password</button>
                     <form method="POST" action="userProfile.php">
