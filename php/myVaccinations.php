@@ -62,45 +62,68 @@
                     <table class="table" style="border: 1;">
                         <thead>
                             <tr>
-                                <th>Vaccination ID</th>
-                                <th>User ID</th>
                                 <th>Dose Number</th>
-                                <th>Vaccine Brand</th>
-                                <th>Vaccined Place</th>
-                                <th>Vaccined Data</th>
+                                <th>Name of Vaccine</th>
+                                <th>Place of Vaccined</th>
+                                <th>Date of Vaccined</th>
                                 <th>Batch Number</th>
                                 <th>Remarks</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1001</td>
-                                <td>200027403865</td>
-                                <td>1</td>
-                                <td>pfizer</td>
-                                <td>waters edge</td>
-                                <td>22/10/2021</td>
-                                <td>1155</td>
-                                <td>no allergies</td>
+                            <?php
+                            require 'DbConfig.php';
+                            if (isset($_COOKIE['user'])) {
+
+                                $userID = json_decode($_COOKIE['user'])->user_Id;
 
 
-                                <td>
-                                    <div class="tb-buttons">
-                                        <div class="tb-update">
-                                            <button type="button" class="btn btn-outline-secondary" id="tbl-bt">
-                                                UPDATE
-                                            </button>
-                                        </div>
+                                $sql = "SELECT * FROM vaccinations WHERE user_Id= '" . $userID . "'";
+                                $result = $conn->query($sql);
+                                // echo $conn->query($sql);
+                                // $data = json_encode($result->user);
+                                if ($result) {
+                                    if ($result->num_rows > 0) {
+                                        while ($row = $result->fetch_assoc()) {
+                            ?>
+                                            <tr>
+                                                <td><?php echo $row['dose_no']; ?></td>
+                                                <td><?php echo $row['vaccine_name']; ?></td>
+                                                <td><?php echo $row['vaccine_place']; ?></td>
+                                                <td><?php echo $row['vaccine_date']; ?></td>
+                                                <td><?php echo $row['batch_number']; ?></td>
+                                                <td><?php echo $row['remarks']; ?></td>
 
-                                        <div class="tb-delete">
-                                            <button type="button" class="btn btn-outline-secondary" id="tbl-bt">
-                                                DELETE
-                                            </button>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
+
+                                                <td>
+                                                    <div class="tb-buttons">
+                                                        <div class="tb-update">
+                                                            <button type="button" class="btn btn-outline-secondary" id="tbl-bt">
+                                                                UPDATE
+                                                            </button>
+                                                        </div>
+
+                                                        <div class="tb-delete">
+                                                            <button type="button" class="btn btn-outline-secondary" id="tbl-bt">
+                                                                DELETE
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                            <?php
+                                        }
+                                    }
+                                } else {
+                                    echo "Error in " . $sql . "
+                    " . $conn->error;
+                                }
+
+                                $conn->close();
+                            }
+                            ?>
                         </tbody>
                     </table>
                 </div>
