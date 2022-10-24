@@ -1,13 +1,22 @@
 .login {
   width: 400px;
+  height: 500px;
   overflow: hidden;
   margin: auto;
   margin: 20 0 0 450px;
   padding: 80px;
+  padding-top: 8%;
   border-style: solid black;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: 1500px;
+
+  border-color: solid black;
+  border-style: solid;
+  border-radius: 15px;
+}
+
+.show-remember{
+  padding-top: 3%;
 }
 
 a#forg:hover {
