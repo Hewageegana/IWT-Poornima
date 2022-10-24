@@ -41,6 +41,7 @@
 
         <ul class="nav">
 
+        
             <li class="linein"><a href="homepage.html">Home</a></li>
             <li class="linein"><a href="#">View Inventory</a></li>
             <li class="linein"><a href="./php/aboutUs.php">About Us</a></li>

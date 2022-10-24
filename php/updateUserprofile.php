@@ -26,7 +26,7 @@
                 <input type="text" placeholder="Search" />
             </div>
             <div class="avatar">
-                <img src='../images/av.png' alt="logo Image">
+            <img src='../images/av.png' alt="logo Image" class="avatar">
             </div>
         </div>
 
