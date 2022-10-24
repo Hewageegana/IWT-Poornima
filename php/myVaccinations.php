@@ -55,10 +55,20 @@
 
 
     <div class="my-vaccinations">
+
         <center>
             <h1>My Vaccinations</h1>
+        </center>
+        <div class="my-vaccination-add" style="float:right; padding-right:5%">
+            <a href="../php/addVaccination.php" <button class="add-vaccination-btn" style="border-radius: 5px; height: 30px;">
+                Add new record
+                </button>
+            </a>
+        </div>
+        <center>
             <div class="vaccination-table">
                 <div class="table-container">
+
                     <table class="table" style="border: 1;">
                         <thead>
                             <tr>
