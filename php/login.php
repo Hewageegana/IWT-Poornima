@@ -8,42 +8,79 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/header.css">
     <script type="text/javascript" src="../js/login.js"></script>
 </head>
 
 
-<body>
+<body onload="checkAccess()">
     <div>
-        <div class="login">
-            <div class="login-image">
-                <img src='../images/logo.png' alt="logo Image"  style="width: 400px;height: 200px;">
-            </div>
-            <form id="login" method="post">
-                <div class="log-container">
-                    <label><b>Email Address
-                        </b>
-                    </label> <br>
-                    <input type="text" name="Uname" id="Uname" placeholder="Email Address" required style="width: 400px;">
-                    <br><br>
-                    <label><b>Password </b>
-                    </label> <br>
-                    <input type="Password" name="Pass1" id="Pass1" placeholder="Password" required style="width: 400px;"></br>
-                    <div class="show-remember">
-                    <input type="checkbox" onclick="psFunction()">Show Password
-                    <input type="checkbox" id="check">
-                    <span>Remember me</span>
-                    </div>
-                    <br><br>
-                    <center>
-                        <button type="submit" class="button" name="login" value="login">Log In</button>
-
-                        <br><br>
-                        <a href="#" id="forg">Forgot Password ?</a><br>
-                        <h6>If you don't have an account <a href="./register.php" id="regi">Register in here</a></h6>
+        <div class="header">
+            <div class="upper-header">
+                <div class="log-cover">
+                    <img src='../images/logo.png' alt="logo Image" class="logo">
                 </div>
-                </center>
-            </form>
+                <div class="search-bar">
+                    <div class="search-bar-wrapper">
+                        <input type="text" placeholder="Search" class="search-input" />
+                    </div>
+                </div>
+                <div class="empty-div">
 
+                </div>
+                <div class="avatar-cover">
+                    <img src='../images/av.png' alt="logo Image" class="avatar">
+                </div>
+            </div>
+
+        </div>
+
+        <header class="header1">
+
+            <i class="fa fa-bars menu-toggle"></i>
+
+            <ul class="nav">
+
+
+                <li class="linein"><a href="../index.php">Home</a></li>
+                <li class="linein"><a href="#">View Inventory</a></li>
+                <li class="linein"><a href="./aboutUs.php">About Us</a></li>
+                <li class="linein"><a href="#">Help</a></li>
+                <li class="linein"><a href="#">Contact Us</a></li>
+                <li class="linein noAccess" id="noAccess"><a href="./login.php">Login/Register</a></li>
+
+
+
+            </ul>
+        </header>
+        <div class="main-wrapper">
+            <div class="main">
+                <form action="login.php" method="post">
+                    <div class="imgcontainer">
+                        <img src="../images/Authentication-pana.png" alt="Avatar" class="avatar-img">
+                    </div>
+
+                    <div class="container">
+                        <label for="uname"><b>Email Address</b></label>
+                        <input type="text" name="Uname" id="Uname" placeholder="Email Address" required>
+
+                        <label for="psw"><b>Password</b></label>
+                        <input type="Password" name="Pass1" id="Pass1" placeholder="Password" required>
+                        <label>
+                            <input type="checkbox" name="remember" onclick="psFunction()"> Show Password
+                        </label>
+
+                        <button  type="submit" class="button" name="login" value="login">Login</button>
+                        <h4>If you don't have an account <a href="./register.php" id="regi">Register in here</a></h4>
+                    </div>
+
+                    <!-- <div class="container" style="background-color:#f1f1f1">
+            <button type="button" class="cancelbtn">Cancel</button>
+            <span class="psw">Forgot <a href="#">password?</a></span>
+        </div> -->
+                </form>
+            </div>
         </div>
     </div>
 
