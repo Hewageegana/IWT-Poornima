@@ -58,11 +58,19 @@
         <div class="add-form">
 
             <form>
-
                 <div>
                     <label for="phone"><b>User ID :</b></label><br>
                     <input type="text" class="add-input" />
                 </div><br>
+                <div>
+                    <label for="phone"><b>Full Name :</b></label><br>
+                    <input type="text" class="add-input" />
+                </div><br>
+                <div>
+                    <label for="phone"><b>NIC Number :</b></label><br>
+                    <input type="text" class="add-input" />
+                </div><br>
+
                 <div>
                     <label for="phone"><b>Dose Number :</b></label><br>
                     <input type="text" class="add-input" id="do-da" />

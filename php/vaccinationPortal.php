@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../css/home.css">
     <link rel="stylesheet" href="../css/card.css">
     <link rel="stylesheet" href="../css/aboutus.css">
-    <link rel="stylesheet" href="../css/myvaccination.css">
+    <link rel="stylesheet" href="../css/vaccinationPortal.css">
 
     <script type="text/javascript" src="../js/home.js"></script>
 
@@ -21,18 +21,13 @@
 
     <div class="header">
         <div class="upper-header">
-            <div class="log-cover">
+            <div>
                 <img src='../images/logo.png' alt="logo Image" class="logo">
             </div>
             <div class="search-bar">
-                <div class="search-bar-wrapper">
-                    <input type="text" placeholder="Search" class="search-input" />
-                </div>
+                <input type="text" placeholder="Search" />
             </div>
-            <div class="empty-div">
-
-            </div>
-            <div class="avatar-cover">
+            <div class="avatar">
                 <img src='../images/av.png' alt="logo Image" class="avatar">
             </div>
         </div>
@@ -65,11 +60,13 @@
             <h1>My Vaccinations</h1>
         </center>
         <div class="my-vaccination-add" style="float:right; padding-right:5%">
-
+            <a href="../php/addVaccination.php"> <button class="add-vaccination-btn" style="border-radius: 5px; height: 30px;">
+                    Add new record
+                </button>
+            </a>
         </div>
         <center>
             <div class="vaccination-table">
-                <button type="button" class="button" name="login" value="login" onclick="gotoAddNew()">Add News</button>
                 <div class="table-container">
 
                     <table class="table" style="border: 1;">
@@ -84,7 +81,7 @@
                                 <th>Date of Vaccined</th>
                                 <th>Batch Number</th>
                                 <th>Remarks</th>
-
+                                <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -112,7 +109,21 @@
                                                 <td><?php echo $row['remarks']; ?></td>
 
 
+                                                <td>
+                                                    <div class="tb-buttons">
+                                                        <div class="tb-update">
+                                                            <button type="button" class="btn btn-outline-secondary" id="tbl-bt">
+                                                                UPDATE
+                                                            </button>
+                                                        </div>
 
+                                                        <div class="tb-delete">
+                                                            <button type="button" class="btn btn-outline-secondary" id="tbl-bt">
+                                                                DELETE
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </td>
                                             </tr>
 
                             <?php
