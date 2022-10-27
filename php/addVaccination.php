@@ -40,7 +40,6 @@
         <i class="fa fa-bars menu-toggle"></i>
 
         <ul class="nav">
-
             <li class="linein"><a href="../index.php">Home</a></li>
             <li class="linein"><a href="#">View Inventory</a></li>
             <li class="linein"><a href="../php/aboutUs.php">About Us</a></li>
@@ -68,6 +67,11 @@
                 </div><br>
                 <div>
                     <label for="phone"><b>NIC Number :</b></label><br>
+                    <input type="text" class="add-input" />
+                </div><br>
+
+                <div>
+                    <label for="phone"><b>Age :</b></label><br>
                     <input type="text" class="add-input" />
                 </div><br>
 

@@ -69,7 +69,7 @@
         </div>
         <center>
             <div class="vaccination-table">
-                <button type="button" class="button" name="login" value="login" onclick="gotoAddNew()">Add News</button>
+                
                 <div class="table-container">
 
                     <table class="table" style="border: 1;">
