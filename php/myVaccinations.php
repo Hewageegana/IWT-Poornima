@@ -21,13 +21,18 @@
 
     <div class="header">
         <div class="upper-header">
-            <div>
+            <div class="log-cover">
                 <img src='../images/logo.png' alt="logo Image" class="logo">
             </div>
             <div class="search-bar">
-                <input type="text" placeholder="Search" />
+                <div class="search-bar-wrapper">
+                    <input type="text" placeholder="Search" class="search-input" />
+                </div>
             </div>
-            <div class="avatar">
+            <div class="empty-div">
+
+            </div>
+            <div class="avatar-cover">
                 <img src='../images/av.png' alt="logo Image" class="avatar">
             </div>
         </div>
@@ -58,6 +63,7 @@
         <center>
             <h1>My Vaccinations</h1>
             <div class="vaccination-table">
+                <button type="button" class="button" name="login" value="login" onclick="gotoAddNew()">Add News</button>
                 <div class="table-container">
                     <table class="table" style="border: 1;">
                         <thead>

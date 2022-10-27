@@ -36,3 +36,7 @@ function getCookie(name) {
     // Return null if not found
     return null;
 }
+
+function gotoAddNew(){
+    window.location = '../php/addMyVaccinations.php'
+}
