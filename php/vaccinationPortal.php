@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../css/home.css">
     <link rel="stylesheet" href="../css/card.css">
     <link rel="stylesheet" href="../css/aboutus.css">
-    <link rel="stylesheet" href="../css/myvaccination.css">
+    <link rel="stylesheet" href="../css/vaccinationPortal.css">
 
     <script type="text/javascript" src="../js/home.js"></script>
 
@@ -60,7 +60,10 @@
             <h1>My Vaccinations</h1>
         </center>
         <div class="my-vaccination-add" style="float:right; padding-right:5%">
-
+            <a href="../php/addVaccination.php"> <button class="add-vaccination-btn" style="border-radius: 5px; height: 30px;">
+                    Add new record
+                </button>
+            </a>
         </div>
         <center>
             <div class="vaccination-table">
@@ -78,7 +81,7 @@
                                 <th>Date of Vaccined</th>
                                 <th>Batch Number</th>
                                 <th>Remarks</th>
-
+                                <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -106,7 +109,21 @@
                                                 <td><?php echo $row['remarks']; ?></td>
 
 
+                                                <td>
+                                                    <div class="tb-buttons">
+                                                        <div class="tb-update">
+                                                            <button type="button" class="btn btn-outline-secondary" id="tbl-bt">
+                                                                UPDATE
+                                                            </button>
+                                                        </div>
 
+                                                        <div class="tb-delete">
+                                                            <button type="button" class="btn btn-outline-secondary" id="tbl-bt">
+                                                                DELETE
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </td>
                                             </tr>
 
                             <?php
