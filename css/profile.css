@@ -44,12 +44,10 @@
     font-size: 18px;
 }
 
-/* .button-wrpper{
-    display: flex;
-    width: 100%;
-    align-items: flex-end;
-    justify-items: flex-end;
-} */
+.button-wrpper{
+    min-width: 60%;
+    max-width: 80%;
+}
 
 .resetbtn {
     color: white;

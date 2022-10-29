@@ -44,11 +44,12 @@
 
 
                 <li class="linein"><a href="../index.php">Home</a></li>
-                <li class="linein"><a href="#">View Inventory</a></li>
+                <li class="linein" id="portal"><a href="./vaccinationPortal.php">Vaccination Portal</a></li>
                 <li class="linein"><a href="./aboutUs.php">About Us</a></li>
-                <li class="linein"><a href="#">Help</a></li>
-                <li class="linein"><a href="#">Contact Us</a></li>
+                <!-- <li class="linein"><a href="#">Help</a></li> -->
+                <!-- <li class="linein"><a href="#">Contact Us</a></li> -->
                 <li class="linein noAccess" id="noAccess"><a href="./login.php">Login/Register</a></li>
+                <li class="linein login" id="login"><a href="./userProfile.php">Profile</a></li>
 
 
 
@@ -71,7 +72,7 @@
                             <input type="checkbox" name="remember" onclick="psFunction()"> Show Password
                         </label>
 
-                        <button  type="submit" class="button" name="login" value="login">Login</button>
+                        <button type="submit" class="button" name="login" value="login">Login</button>
                         <h4>If you don't have an account <a href="./register.php" id="regi">Register in here</a></h4>
                     </div>
 

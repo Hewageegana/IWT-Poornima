@@ -13,11 +13,13 @@
     <link rel="stylesheet" href="../css/myvaccination.css">
 
     <script type="text/javascript" src="../js/vaccination.js"></script>
+    <script type="text/javascript" src="../js/checkAccess.js"></script>
+
     <title>Document</title>
 
 </head>
 
-<body onload="checkAccess()">
+<body onload="checkTypeAccess()">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <div class="header">
@@ -47,13 +49,13 @@
         <ul class="nav">
 
 
-            <li class="linein"><a href="homepage.html">Home</a></li>
-            <li class="linein" id="portal"><a href="./php/vaccinationPortal.php">Vaccination Portal</a></li>
-            <li class="linein"><a href="./php/aboutUs.php">About Us</a></li>
-            <li class="linein"><a href="#">Help</a></li>
-            <li class="linein"><a href="#">Contact Us</a></li>
-            <li class="linein noAccess" id="noAccess"><a href="./php/login.php">Login/Register</a></li>
-            <li class="linein login" id="login"><a href="./php/userProfile.php">Profile</a></li>
+            <li class="linein"><a href="../index.php">Home</a></li>
+            <li class="linein" id="portal"><a href="./vaccinationPortal.php">Vaccination Portal</a></li>
+            <li class="linein"><a href="./aboutUs.php">About Us</a></li>
+            <!-- <li class="linein"><a href="#">Help</a></li> -->
+            <!-- <li class="linein"><a href="#">Contact Us</a></li> -->
+            <li class="linein noAccess" id="noAccess"><a href="./login.php">Login/Register</a></li>
+            <li class="linein login" id="login"><a href="./userProfile.php">Profile</a></li>
 
 
 
@@ -78,7 +80,7 @@
                             while ($row = $result->fetch_assoc()) {
                 ?>
                                 <div class="container">
-                                    <h2>Add New Vaccine Details</h2>
+                                    <h2>Update Vaccine Details</h2>
                                     <hr />
                                     <label for="FullName"><b>Full Name</b></label>
                                     <input type="text" name="FullName" id="FullName" placeholder="Full Name" value="<?php echo $row['fullname']; ?>" required>
@@ -130,7 +132,7 @@
                 $BatchNumber = $_POST["BatchNumber"];
                 $Remarks = $_POST["Remarks"];
                 $createdDate = date('Y-m-d H:i:s');
-                $newDate = date("d-m-Y", strtotime($DateofVaccined));
+                $newDate = date("Y-m-d", strtotime($DateofVaccined));
 
                 // $sql = "INSERT INTO vaccinations (vac_Id , fullname, dose_no, vaccine_name, vaccine_place, vaccine_date, batch_number, remarks, nic, created_date)
                 //                     VALUES (0,'$fullName','$DoseNumber','$NameofVaccine',$PlaceofVaccined,'$newDate','$BatchNumber','$Remarks','$NicNumber', '$createdDate' )";

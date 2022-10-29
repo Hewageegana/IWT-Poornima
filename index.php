@@ -42,11 +42,11 @@
         <ul class="nav">
 
         
-            <li class="linein"><a href="homepage.html">Home</a></li>
-            <li class="linein" id="portal"><a href="./php/vaccinationPortal.php">Vaccination Portal</a></li>
+            <li class="linein"><a href="./index.php">Home</a></li>
+            <li class="linein portal" id="portal"><a href="./php/vaccinationPortal.php">Vaccination Portal</a></li>
             <li class="linein"><a href="./php/aboutUs.php">About Us</a></li>
-            <li class="linein"><a href="#">Help</a></li>
-            <li class="linein"><a href="#">Contact Us</a></li>
+            <!-- <li class="linein"><a href="#">Help</a></li> -->
+            <!-- <li class="linein"><a href="#">Contact Us</a></li> -->
             <li class="linein noAccess" id="noAccess"><a href="./php/login.php">Login/Register</a></li>
             <li class="linein login" id="login"><a href="./php/userProfile.php">Profile</a></li>
 
