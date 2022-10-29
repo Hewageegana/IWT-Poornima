@@ -19,14 +19,19 @@
 
     <div class="header">
         <div class="upper-header">
-            <div>
+            <div class="log-cover">
                 <img src='../images/logo.png' alt="logo Image" class="logo">
             </div>
             <div class="search-bar">
-                <input type="text" placeholder="Search" />
+                <div class="search-bar-wrapper">
+                    <input type="text" placeholder="Search" class="search-input" />
+                </div>
             </div>
-            <div class="avatar">
-            <img src='../images/av.png' alt="logo Image" class="avatar">
+            <div class="empty-div">
+
+            </div>
+            <div class="avatar-cover">
+                <img src='../images/av.png' alt="logo Image" class="avatar">
             </div>
         </div>
 
@@ -38,12 +43,14 @@
 
         <ul class="nav">
 
+
             <li class="linein"><a href="../index.php">Home</a></li>
-            <li class="linein"><a href="#">View Inventory</a></li>
+            <li class="linein" id="portal"><a href="./vaccinationPortal.php">Vaccination Portal</a></li>
             <li class="linein"><a href="./aboutUs.php">About Us</a></li>
-            <li class="linein"><a href="#">Help</a></li>
-            <li class="linein"><a href="#">Contact Us</a></li>
-            <li class="linein login" id="login"><a href="./updateUserprofile.php">Profile</a></li>
+            <!-- <li class="linein"><a href="#">Help</a></li> -->
+            <!-- <li class="linein"><a href="#">Contact Us</a></li> -->
+            <li class="linein noAccess" id="noAccess"><a href="./login.php">Login/Register</a></li>
+            <li class="linein login" id="login"><a href="./userProfile.php">Profile</a></li>
 
 
 
@@ -85,34 +92,12 @@
                                 <label for="fname"><b>Last Name:</b></label><br>
                                 <input type="text" id="fname" name="lname" style="width:1000px" placeholder="Last Name" value="<?php echo $row['last_name']; ?>" required><br />
 
-                                <!-- <label for="gender"><b>Gender:</b></label><br><br>
-                <label class="gen">Male
-                    <input type="radio" value="Male" checked="checked" name="radio">
-                    <span class="checkmark"></span>
-                </label><br>
-                <label class="gen">Female
-                    <input type="radio" value="Female" name="radio">
-                    <span class="checkmark"></span>
-                </label><br> -->
-
-                                <!--<label for = gender><b>Gender</b></label><br>
-                    <select name ="radio" id="radio">
-                        <option selected hidden value ="">Choose gender</option>
-                        <option value="MALE">MALE</option>
-                        <option value="FEMALE">FEMALE</option>
-                    </select><br><br>-->
-
                                 <label for="phone"><b>Phone number :</b></label><br>
                                 <input type="tel" id="fname" name="phone" pattern="[0-9]{10}" style="width:1000px" placeholder="Phone number" value="0<?php echo $row['phone_number']; ?>" required><br>
 
                                 <label for="address"><b>Address :</b></label><br>
                                 <textarea id="fname" name="address" rows="10" cols="50" style="width:500px" placeholder="Address" ;required><?php echo $row['address']; ?></textarea><br>
 
-                                <!--<label for="dob"><b>Choose your DOB:</b></label><br>
-                        <input type="date" name="day" id="fname" style="width:300px" required><br><br>-->
-
-                                <!-- <label for="email"><b>Email</b></label><br>
-                <input type="text" placeholder="Enter Email" name="email" id="fname" style="width:1000px" required><br> -->
                 <?php
                             }
                         }

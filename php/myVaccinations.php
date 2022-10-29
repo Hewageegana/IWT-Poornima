@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../css/aboutus.css">
     <link rel="stylesheet" href="../css/myvaccination.css">
 
-    <script type="text/javascript" src="../js/home.js"></script>
+    <script type="text/javascript" src="../js/checkAccess.js"></script>
 
 </head>
 
@@ -45,13 +45,14 @@
 
         <ul class="nav">
 
+
             <li class="linein"><a href="../index.php">Home</a></li>
-            <li class="linein"><a href="#">View Inventory</a></li>
-            <li class="linein"><a href="../php/aboutUs.php">About Us</a></li>
-            <li class="linein"><a href="#">Help</a></li>
-            <li class="linein"><a href="#">Contact Us</a></li>
-            <li class="linein noAccess" id="noAccess"><a href="../php/login.php">Login/Register</a></li>
-            <li class="linein login" id="login"><a href="../php/userProfile.php">Profile</a></li>
+            <li class="linein" id="portal"><a href="./vaccinationPortal.php">Vaccination Portal</a></li>
+            <li class="linein"><a href="./aboutUs.php">About Us</a></li>
+            <!-- <li class="linein"><a href="#">Help</a></li> -->
+            <!-- <li class="linein"><a href="#">Contact Us</a></li> -->
+            <li class="linein noAccess" id="noAccess"><a href="./login.php">Login/Register</a></li>
+            <li class="linein login" id="login"><a href="./userProfile.php">Profile</a></li>
 
 
 
@@ -69,7 +70,7 @@
         </div>
         <center>
             <div class="vaccination-table">
-                
+
                 <div class="table-container">
 
                     <table class="table" style="border: 1;">

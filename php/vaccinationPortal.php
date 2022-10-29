@@ -13,10 +13,12 @@
     <link rel="stylesheet" href="../css/vaccinationPortal.css">
 
     <script type="text/javascript" src="../js/vaccination.js"></script>
+    <script type="text/javascript" src="../js/checkAccess.js"></script>
+
 
 </head>
 
-<body onload="checkAccess()">
+<body onload="checkTypeAccess()">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <div class="header">
@@ -49,8 +51,8 @@
             <li class="linein"><a href="../index.php">Home</a></li>
             <li class="linein" id="portal"><a href="./vaccinationPortal.php">Vaccination Portal</a></li>
             <li class="linein"><a href="./aboutUs.php">About Us</a></li>
-            <li class="linein"><a href="#">Help</a></li>
-            <li class="linein"><a href="#">Contact Us</a></li>
+            <!-- <li class="linein"><a href="#">Help</a></li> -->
+            <!-- <li class="linein"><a href="#">Contact Us</a></li> -->
             <li class="linein noAccess" id="noAccess"><a href="./login.php">Login/Register</a></li>
             <li class="linein login" id="login"><a href="./userProfile.php">Profile</a></li>
 
