@@ -69,7 +69,7 @@
         </div>
         <center>
             <div class="vaccination-table">
-                <button type="button" class="button" name="login" value="login" onclick="gotoAddNew()">Add News</button>
+                
                 <div class="table-container">
 
                     <table class="table" style="border: 1;">
@@ -77,7 +77,6 @@
                             <tr>
                                 <th>NIC Number</th>
                                 <th>Full Name</th>
-                                <th>Age</th>
                                 <th>Dose Number</th>
                                 <th>Name of Vaccine</th>
                                 <th>Place of Vaccined</th>
@@ -92,10 +91,9 @@
                             require 'DbConfig.php';
                             if (isset($_COOKIE['user'])) {
 
-                                $userID = json_decode($_COOKIE['user'])->user_Id;
+                                $nic = json_decode($_COOKIE['user'])->nic;
 
-
-                                $sql = "SELECT * FROM vaccinations WHERE user_Id= '" . $userID . "'";
+                                $sql = "SELECT * FROM vaccinations WHERE nic= '" . $nic . "'";
                                 $result = $conn->query($sql);
                                 // echo $conn->query($sql);
                                 // $data = json_encode($result->user);
@@ -104,6 +102,8 @@
                                         while ($row = $result->fetch_assoc()) {
                             ?>
                                             <tr>
+                                                <td><?php echo $row['nic']; ?></td>
+                                                <td><?php echo $row['fullname']; ?></td>
                                                 <td><?php echo $row['dose_no']; ?></td>
                                                 <td><?php echo $row['vaccine_name']; ?></td>
                                                 <td><?php echo $row['vaccine_place']; ?></td>

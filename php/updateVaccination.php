@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-    <title>Online Vaccination Portal</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,6 +13,7 @@
     <link rel="stylesheet" href="../css/myvaccination.css">
 
     <script type="text/javascript" src="../js/vaccination.js"></script>
+    <title>Document</title>
 
 </head>
 
@@ -61,38 +61,61 @@
     </header>
     <div class="main-wrapper">
         <div class="main">
-            <form action="addVaccination.php" method="post">
+            <form action="updateVaccination.php" method="post">
+                <?php
+                require 'DbConfig.php';
+                if (isset($_COOKIE['VacID'])) {
 
-                <div class="container">
-                    <h2>Add New Vaccine Details</h2>
-                    <hr />
-                    <label for="FullName"><b>Full Name</b></label>
-                    <input type="text" name="FullName" id="FullName" placeholder="Full Name" required>
+                    $vacID = $_COOKIE['VacID'];
 
-                    <label for="NicNumber"><b>Nic Number</b></label>
-                    <input type="text" name="NicNumber" id="NicNumber" placeholder="Nic Number" required>
 
-                    <label for="DoseNumber"><b>Dose Number</b></label>
-                    <input type="text" name="DoseNumber" id="DoseNumber" placeholder="Dose Number" required>
+                    $sql = "SELECT * FROM vaccinations WHERE vac_Id= '" . $vacID . "'";
+                    $result = $conn->query($sql);
+                    // echo $conn->query($sql);
+                    // $data = json_encode($result->user);
+                    if ($result) {
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                ?>
+                                <div class="container">
+                                    <h2>Add New Vaccine Details</h2>
+                                    <hr />
+                                    <label for="FullName"><b>Full Name</b></label>
+                                    <input type="text" name="FullName" id="FullName" placeholder="Full Name" value="<?php echo $row['fullname']; ?>" required>
 
-                    <label for="NameofVaccine"><b>Name of Vaccine</b></label>
-                    <input type="text" name="NameofVaccine" id="NameofVaccine" placeholder="Name of Vaccine" required>
+                                    <label for="NicNumber"><b>Nic Number</b></label>
+                                    <input type="text" name="NicNumber" id="NicNumber" placeholder="Nic Number" value="<?php echo $row['nic']; ?>" required>
 
-                    <label for="PlaceofVaccined"><b>Place of Vaccined</b></label>
-                    <input type="text" name="PlaceofVaccined" id="PlaceofVaccined" placeholder="Place of Vaccined" required>
+                                    <label for="DoseNumber"><b>Dose Number</b></label>
+                                    <input type="text" name="DoseNumber" id="DoseNumber" placeholder="Dose Number" value="<?php echo $row['dose_no']; ?>" required>
 
-                    <label for="DateofVaccined"><b>Date of Vaccined</b></label>
-                    <input type="date" name="DateofVaccined" id="DateofVaccined" placeholder="Date of Vaccined" required>
+                                    <label for="NameofVaccine"><b>Name of Vaccine</b></label>
+                                    <input type="text" name="NameofVaccine" id="NameofVaccine" placeholder="Name of Vaccine" value="<?php echo $row['vaccine_name']; ?>" required>
 
-                    <label for="BatchNumber"><b>Batch Number</b></label>
-                    <input type="text" name="BatchNumber" id="BatchNumber" placeholder="Batch Number" required>
+                                    <label for="PlaceofVaccined"><b>Place of Vaccined</b></label>
+                                    <input type="text" name="PlaceofVaccined" id="PlaceofVaccined" placeholder="Place of Vaccined" value="<?php echo $row['vaccine_place']; ?>" required>
 
-                    <label for="Remarks"><b>Remarks</b></label>
-                    <input type="text" name="Remarks" id="Remarks" placeholder="Remarks">
+                                    <label for="DateofVaccined"><b>Date of Vaccined</b></label>
+                                    <input type="date" name="DateofVaccined" id="DateofVaccined" placeholder="Date of Vaccined" value="<?php echo $row['vaccine_date']; ?>" required>
 
-                    <button type="submit" class="button" name="save" value="save">SAVE</button>
+                                    <label for="BatchNumber"><b>Batch Number</b></label>
+                                    <input type="text" name="BatchNumber" id="BatchNumber" placeholder="Batch Number" value="<?php echo $row['batch_number']; ?>" required>
 
-                </div>
+                                    <label for="Remarks"><b>Remarks</b></label>
+                                    <input type="text" name="Remarks" id="Remarks" placeholder="Remarks" value="<?php echo $row['remarks']; ?>" required>
+
+                                    <button type="submit" class="button" name="save" value="save">UPDATE</button>
+
+                    <?php
+                            }
+                        }
+                    } else {
+                        echo "Error in " . $sql . "
+                    " . $conn->error;
+                    }
+                }
+                    ?>
+                                </div>
             </form>
             <?php
             require './DbConfig.php';
@@ -107,26 +130,28 @@
                 $BatchNumber = $_POST["BatchNumber"];
                 $Remarks = $_POST["Remarks"];
                 $createdDate = date('Y-m-d H:i:s');
-                $newDate = date("Y-m-d", strtotime($DateofVaccined));
+                $newDate = date("d-m-Y", strtotime($DateofVaccined));
 
-                $sql = "INSERT INTO vaccinations (vac_Id , fullname, dose_no, vaccine_name, vaccine_place, vaccine_date, batch_number, remarks, nic, created_date)
-                                    VALUES (0,'$fullName','$DoseNumber','$NameofVaccine','$PlaceofVaccined','$newDate','$BatchNumber','$Remarks','$NicNumber', '$createdDate' )";
+                // $sql = "INSERT INTO vaccinations (vac_Id , fullname, dose_no, vaccine_name, vaccine_place, vaccine_date, batch_number, remarks, nic, created_date)
+                //                     VALUES (0,'$fullName','$DoseNumber','$NameofVaccine',$PlaceofVaccined,'$newDate','$BatchNumber','$Remarks','$NicNumber', '$createdDate' )";
+
+                $sql = "UPDATE vaccinations SET fullname='$fullName', dose_no='$DoseNumber', vaccine_name='$NameofVaccine', vaccine_place ='$PlaceofVaccined', vaccine_date ='$newDate', batch_number ='$BatchNumber' , remarks ='$Remarks' , nic ='$NicNumber'   
+                WHERE vac_Id= '$vacID'";
 
                 if ($conn->query($sql) === TRUE) {
                     echo '<script language = "javascript">';
-                    echo 'success()';
+                    echo 'onUpdateSuccuess()';
                     echo '</script>';
-                }
-                else {
+                } else {
                     echo '<script language = "javascript">';
                     echo 'alert("Unsuccessfully :( ")';
                     echo '</script>';
                     echo $conn->query($sql);
                 }
-    //             else {
-    //                 echo "Error in " . $sql . "
-    // " . $conn->error;
-    //             }
+                //             else {
+                //                 echo "Error in " . $sql . "
+                // " . $conn->error;
+                //             }
                 $conn->close();
             }
             ?>
