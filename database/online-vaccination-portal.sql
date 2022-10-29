@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3307
--- Generation Time: Oct 23, 2022 at 04:19 AM
+-- Generation Time: Oct 29, 2022 at 02:03 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 7.4.30
 
@@ -36,6 +36,7 @@ CREATE TABLE `users` (
   `address` varchar(250) NOT NULL,
   `email` varchar(250) NOT NULL,
   `password` varchar(250) NOT NULL,
+  `nic` varchar(15) NOT NULL,
   `isActive` tinyint(1) NOT NULL,
   `user_type` int(1) NOT NULL,
   `created_date` timestamp(3) NOT NULL DEFAULT current_timestamp(3)
@@ -45,14 +46,38 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`user_Id`, `first_name`, `last_name`, `gender`, `phone_number`, `address`, `email`, `password`, `isActive`, `user_type`, `created_date`) VALUES
-(1, 'Damru', 'Ravihara', 'Male', 778945836, 'Colombo', 'damruravihara2@gmail.com', '12345', 1, 1, '2022-10-21 22:30:13.000'),
-(3, 'Ravihara', 'Fernando', 'Male', 778945836, 'Colombo', 'amal@gmail.com', '12345', 1, 1, '2022-10-22 02:03:32.000'),
-(4, 'Fenando', 'bentharage', 'Male', 778945836, 'Colombo', 'asaS@gmail.com', '12345', 1, 1, '2022-10-22 02:06:03.000'),
-(5, 'Imal', 'Shanaka', 'Male', 778945836, 'Colombo', '12345@gmail.com', '12345', 1, 1, '2022-10-22 02:06:59.000'),
-(6, 'dula', 'shani', 'Male', 778945836, 'colombo', 'dul@gmail.com', '12345', 1, 1, '2022-10-22 02:08:45.000'),
-(7, 'dula', 'shani', 'Male', 778945836, 'colombo', '1234dsa5@gmail.com', '12345', 1, 1, '2022-10-22 02:09:32.000'),
-(8, 'Damru', 'Ravihara', 'Male', 778945836, 'Colombo', '1234dssdaa5@gmail.com', '12345', 1, 1, '2022-10-22 02:34:52.000');
+INSERT INTO `users` (`user_Id`, `first_name`, `last_name`, `gender`, `phone_number`, `address`, `email`, `password`, `nic`, `isActive`, `user_type`, `created_date`) VALUES
+(1, 'Damru', 'Fernando', 'Male', 778945836, 'Colombo 12   ', 'damruravihara2@gmail.com', '12345', '200025501131', 1, 2, '2022-10-21 22:30:13.000'),
+(8, 'Damru', 'Ravihara', 'Male', 778945836, 'Colombo', '1234dssdaa5@gmail.com', '12345', '200225501131', 1, 1, '2022-10-22 02:34:52.000'),
+(15, 'Damru', 'Ravihara', 'Male', 778945837, 'Colombo', 'damruravihara10@gmail.com', '12345', '200925501131', 1, 1, '2022-10-28 12:58:20.000'),
+(16, 'Imal', 'Shanaka', 'Male', 778945836, 'colombo', 'imal.shanaka@gmail.com', '12345', '205025501131', 1, 1, '2022-10-28 13:02:56.000');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `vaccinations`
+--
+
+CREATE TABLE `vaccinations` (
+  `vac_Id` int(11) NOT NULL,
+  `fullname` varchar(100) NOT NULL,
+  `dose_no` int(10) NOT NULL,
+  `vaccine_name` varchar(50) NOT NULL,
+  `vaccine_place` varchar(250) NOT NULL,
+  `vaccine_date` varchar(100) NOT NULL,
+  `batch_number` varchar(59) NOT NULL,
+  `remarks` varchar(50) NOT NULL,
+  `nic` varchar(15) NOT NULL,
+  `created_date` timestamp(3) NOT NULL DEFAULT current_timestamp(3) ON UPDATE current_timestamp(3)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `vaccinations`
+--
+
+INSERT INTO `vaccinations` (`vac_Id`, `fullname`, `dose_no`, `vaccine_name`, `vaccine_place`, `vaccine_date`, `batch_number`, `remarks`, `nic`, `created_date`) VALUES
+(14, 'Damru Ravihara', 2, 'Fizer', 'Panadura', '2022-10-29', '100-2212', 'no', '200025501131', '2022-10-29 11:56:18.587'),
+(15, 'Damru Ravihara', 2, 'Fizer', 'Panadura', '2022-10-10', '100-22', '', '200225501131', '2022-10-29 08:27:00.000');
 
 --
 -- Indexes for dumped tables
@@ -65,6 +90,12 @@ ALTER TABLE `users`
   ADD PRIMARY KEY (`user_Id`);
 
 --
+-- Indexes for table `vaccinations`
+--
+ALTER TABLE `vaccinations`
+  ADD PRIMARY KEY (`vac_Id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -72,7 +103,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `user_Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT for table `vaccinations`
+--
+ALTER TABLE `vaccinations`
+  MODIFY `vac_Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
