@@ -102,7 +102,7 @@
                     <a href="../php/updateUserprofile.php"><button type="button" class="resetbtn" style="background-color: #2962FF">Update Profile</button></a>
                     <button type="button" class="resetbtn" style="background-color: #2962FF">Change Password</button>
                     <form method="POST" action="userProfile.php">
-                        <button type="submit" id="deleteBtn" name="deleteBtn" class="resetbtn" style="background-color: #D50000" value="10">Delete Account</button>
+                        <button type="submit" id="deleteBtn" name="deleteBtn" class="resetbtn" style="background-color: #D50000" value="10" onclick="return confirm('Are you sure?\n Do You Want To Delete Account ?');">Delete Account</button>
                     </form>
                     <button type="button" class="resetbtn" style="background-color: #D50000" onclick="logOut()">Log out</button>
                     <?php

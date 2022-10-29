@@ -1,10 +1,17 @@
 function checkAccess() {
     var x = document.getElementById("noAccess");
     var y = document.getElementById("login");
+    var z = document.getElementById("portal");
     // var dc = document.cookie;
     // let user = dc.getCookie("user");
 
     let user = getCookie('user')
+    console.log(typeof JSON.parse(user).user_type)
+    if(user != undefined && user != null && user.length > 0 && JSON.parse(user).user_type === "2"){
+        z.style.display= 'display'
+    }else{
+        z.style.display= 'none'
+    }
     if(user != undefined && user != null && user.length > 0){
         y.style.display= 'display'
         x.style.display= 'none'

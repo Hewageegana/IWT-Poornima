@@ -43,7 +43,7 @@
 
         
             <li class="linein"><a href="homepage.html">Home</a></li>
-            <li class="linein"><a href="./php/vaccinationPortal.php">Vaccination Portal</a></li>
+            <li class="linein" id="portal"><a href="./php/vaccinationPortal.php">Vaccination Portal</a></li>
             <li class="linein"><a href="./php/aboutUs.php">About Us</a></li>
             <li class="linein"><a href="#">Help</a></li>
             <li class="linein"><a href="#">Contact Us</a></li>

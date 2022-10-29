@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../css/aboutus.css">
     <link rel="stylesheet" href="../css/vaccinationPortal.css">
 
-    <script type="text/javascript" src="../js/home.js"></script>
+    <script type="text/javascript" src="../js/vaccination.js"></script>
 
 </head>
 
@@ -21,13 +21,18 @@
 
     <div class="header">
         <div class="upper-header">
-            <div>
+            <div class="log-cover">
                 <img src='../images/logo.png' alt="logo Image" class="logo">
             </div>
             <div class="search-bar">
-                <input type="text" placeholder="Search" />
+                <div class="search-bar-wrapper">
+                    <input type="text" placeholder="Search" class="search-input" />
+                </div>
             </div>
-            <div class="avatar">
+            <div class="empty-div">
+
+            </div>
+            <div class="avatar-cover">
                 <img src='../images/av.png' alt="logo Image" class="avatar">
             </div>
         </div>
@@ -40,13 +45,14 @@
 
         <ul class="nav">
 
+
             <li class="linein"><a href="../index.php">Home</a></li>
-            <li class="linein"><a href="#">View Inventory</a></li>
-            <li class="linein"><a href="../php/aboutUs.php">About Us</a></li>
+            <li class="linein" id="portal"><a href="./vaccinationPortal.php">Vaccination Portal</a></li>
+            <li class="linein"><a href="./aboutUs.php">About Us</a></li>
             <li class="linein"><a href="#">Help</a></li>
             <li class="linein"><a href="#">Contact Us</a></li>
-            <li class="linein noAccess" id="noAccess"><a href="../php/login.php">Login/Register</a></li>
-            <li class="linein login" id="login"><a href="../php/userProfile.php">Profile</a></li>
+            <li class="linein noAccess" id="noAccess"><a href="./login.php">Login/Register</a></li>
+            <li class="linein login" id="login"><a href="./userProfile.php">Profile</a></li>
 
 
 
@@ -57,7 +63,7 @@
     <div class="my-vaccinations">
 
         <center>
-            <h1>My Vaccinations</h1>
+            <h1>Vaccinations Portal</h1>
         </center>
         <div class="my-vaccination-add" style="float:right; padding-right:5%">
             <a href="../php/addVaccination.php"> <button class="add-vaccination-btn" style="border-radius: 5px; height: 30px;">
@@ -74,7 +80,6 @@
                             <tr>
                                 <th>NIC Number</th>
                                 <th>Full Name</th>
-                                <th>Age</th>
                                 <th>Dose Number</th>
                                 <th>Name of Vaccine</th>
                                 <th>Place of Vaccined</th>
@@ -92,7 +97,7 @@
                                 $userID = json_decode($_COOKIE['user'])->user_Id;
 
 
-                                $sql = "SELECT * FROM vaccinations WHERE user_Id= '" . $userID . "'";
+                                $sql = "SELECT * FROM vaccinations";
                                 $result = $conn->query($sql);
                                 // echo $conn->query($sql);
                                 // $data = json_encode($result->user);
@@ -101,6 +106,8 @@
                                         while ($row = $result->fetch_assoc()) {
                             ?>
                                             <tr>
+                                                <td><?php echo $row['nic']; ?></td>
+                                                <td><?php echo $row['fullname']; ?></td>
                                                 <td><?php echo $row['dose_no']; ?></td>
                                                 <td><?php echo $row['vaccine_name']; ?></td>
                                                 <td><?php echo $row['vaccine_place']; ?></td>
@@ -112,15 +119,17 @@
                                                 <td>
                                                     <div class="tb-buttons">
                                                         <div class="tb-update">
-                                                            <button type="button" class="btn btn-outline-secondary" id="tbl-bt">
+                                                            <button type="button" class="btn btn-outline-secondary" id="tbl-bt" onclick="onUpdate(<?php echo $row['vac_Id']; ?>)">
                                                                 UPDATE
                                                             </button>
                                                         </div>
 
                                                         <div class="tb-delete">
-                                                            <button type="button" class="btn btn-outline-secondary" id="tbl-bt">
-                                                                DELETE
-                                                            </button>
+                                                            <a href="delete.php?id=<?php echo $row['vac_Id']; ?>">
+                                                                <button type="submit" class="btn btn-outline-secondary" id="tbl-bt" name="deleteBtn" value="10" onclick="return confirm('Are you sure?\n Do You Want To Delete This Vaccine Detail ?');">
+                                                                    DELETE
+                                                                </button>
+                                                            </a>
                                                         </div>
                                                     </div>
                                                 </td>
