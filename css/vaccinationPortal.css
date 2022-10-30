@@ -5,7 +5,6 @@
     margin: 0%;
   }
   .table-container {
-    padding-top: 5%;
     padding-left: 0;
     padding-right: 0;
     box-sizing: border-box;
@@ -73,16 +72,62 @@
   .tb-delete {
     padding-left: 2%;
   }
+
+  .delete-btn{
+    background-color: #aa0404;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+  .update-btn{
+    background-color: #fff;
+    border-width: 1px;
+    border-color: #ff9800;
+    color: #ff9800;
+    cursor: pointer;
+  }
+
+  .update-btn:hover{
+    background-color: #ff9800;
+    color: #fff;
+    opacity: 0.8;
+  }
   
   .tb-buttons button {
     width: auto;
     height: 30px;
     border-radius: 5px;
   }
+
+  .delete-btn:hover {
+    opacity: 0.8;
+  }
   
   .my-vaccinations h1 {
     font-family: Arial, Helvetica, sans-serif;
   }
   
+  .add-vaccination-btn{
+    background-color: #04AA6D;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding-left: 15px;
+    padding-right: 15px;
+    align-self: flex-end;
+    justify-self: center;
+  }
+
+  .add-vaccination-btn:hover {
+    opacity: 0.8;
+  }
   
-  
+  .my-vaccination-add{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding-right: 15%;
+    padding-bottom: 20px;
+  }
