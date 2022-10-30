@@ -67,17 +67,19 @@
         <center>
             <h1>Vaccinations Portal</h1>
         </center>
-        <div class="my-vaccination-add" style="float:right; padding-right:5%">
-            <a href="../php/addVaccination.php"> <button class="add-vaccination-btn" style="border-radius: 5px; height: 30px;">
-                    Add new record
-                </button>
-            </a>
-        </div>
+
         <center>
+
             <div class="vaccination-table">
                 <div class="table-container">
-
+                    <div class="my-vaccination-add">
+                        <a href="../php/addVaccination.php"> <button class="add-vaccination-btn" style="border-radius: 5px; height: 30px;">
+                                Add new record
+                            </button>
+                        </a>
+                    </div>
                     <table class="table" style="border: 1;">
+
                         <thead>
                             <tr>
                                 <th>NIC Number</th>
@@ -121,14 +123,14 @@
                                                 <td>
                                                     <div class="tb-buttons">
                                                         <div class="tb-update">
-                                                            <button type="button" class="btn btn-outline-secondary" id="tbl-bt" onclick="onUpdate(<?php echo $row['vac_Id']; ?>)">
+                                                            <button type="button" class="btn update-btn" id="tbl-bt" onclick="onUpdate(<?php echo $row['vac_Id']; ?>)">
                                                                 UPDATE
                                                             </button>
                                                         </div>
 
                                                         <div class="tb-delete">
                                                             <a href="delete.php?id=<?php echo $row['vac_Id']; ?>">
-                                                                <button type="submit" class="btn btn-outline-secondary" id="tbl-bt" name="deleteBtn" value="10" onclick="return confirm('Are you sure?\n Do You Want To Delete This Vaccine Detail ?');">
+                                                                <button type="submit" class="btn delete-btn" id="tbl-bt" name="deleteBtn" value="10" onclick="return confirm('Are you sure?\n Do You Want To Delete This Vaccine Detail ?');">
                                                                     DELETE
                                                                 </button>
                                                             </a>
