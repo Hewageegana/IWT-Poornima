@@ -15,7 +15,7 @@
     <script type="text/javascript" src="../js/vaccination.js"></script>
     <script type="text/javascript" src="../js/checkAccess.js"></script>
 
-    <title>Document</title>
+    <title>Online Vaccination Portal</title>
 
 </head>
 
