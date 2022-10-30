@@ -136,11 +136,13 @@
                             $createdDate = date('Y-m-d H:i:s');
 
                             $sql = "SELECT * FROM users WHERE nic= '" . $nic . "'";
+                            $sql5 = "SELECT * FROM users WHERE phone_number= '" . $tel . "'";
                             $result = $conn->query($sql);
-                            if ($result) {
-                                if ($result->num_rows > 0) {
+                            $result2 = $conn->query($sql5);
+                            if ($result && $result2) {
+                                if ($result->num_rows > 0 || $result2 -> num_rows> 0) {
                                     echo '<script language = "javascript">';
-                                    echo 'alert("Nic Number Already Exists :( ")';
+                                    echo 'alert("User Already Exists :( ")';
                                     echo '</script>';
                                 } else {
                                     $sqltwo = "INSERT INTO users (user_Id, first_name, last_name, gender, phone_number, address, nic, email, password, isActive,  user_type, created_date)
